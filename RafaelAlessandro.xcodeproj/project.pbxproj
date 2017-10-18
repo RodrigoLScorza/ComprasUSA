@@ -15,6 +15,12 @@
 		0592CC8A1F900691000D3309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0592CC881F900691000D3309 /* LaunchScreen.storyboard */; };
 		0592CC951F900691000D3309 /* RafaelAlessandroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CC941F900691000D3309 /* RafaelAlessandroTests.swift */; };
 		0592CCA01F900691000D3309 /* RafaelAlessandroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CC9F1F900691000D3309 /* RafaelAlessandroUITests.swift */; };
+		0592CCBA1F90472C000D3309 /* placeholder_gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 0592CCB91F90472C000D3309 /* placeholder_gift.png */; };
+		0592CCC81F93AF94000D3309 /* ProdutoRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCC71F93AF94000D3309 /* ProdutoRegisterViewController.swift */; };
+		0592CCCA1F93AFC3000D3309 /* EstadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCC91F93AFC3000D3309 /* EstadoViewController.swift */; };
+		0592CCCD1F93B308000D3309 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCCC1F93B308000D3309 /* UIViewController+CoreData.swift */; };
+		0592CCCF1F93BC41000D3309 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */; };
+		0592CCD11F93D183000D3309 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		0592CC9B1F900691000D3309 /* RafaelAlessandroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RafaelAlessandroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0592CC9F1F900691000D3309 /* RafaelAlessandroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RafaelAlessandroUITests.swift; sourceTree = "<group>"; };
 		0592CCA11F900691000D3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0592CCB91F90472C000D3309 /* placeholder_gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_gift.png; sourceTree = "<group>"; };
+		0592CCC71F93AF94000D3309 /* ProdutoRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoRegisterViewController.swift; sourceTree = "<group>"; };
+		0592CCC91F93AFC3000D3309 /* EstadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoViewController.swift; sourceTree = "<group>"; };
+		0592CCCC1F93B308000D3309 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
+		0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
+		0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,10 @@
 		0592CC7B1F900691000D3309 /* RafaelAlessandro */ = {
 			isa = PBXGroup;
 			children = (
+				0592CCCB1F93B2CA000D3309 /* Extensions */,
+				0592CCBE1F905836000D3309 /* compras */,
+				0592CCBC1F90581D000D3309 /* ajustes */,
+				0592CCB81F9046BB000D3309 /* images */,
 				0592CC7C1F900691000D3309 /* AppDelegate.swift */,
 				0592CC7E1F900691000D3309 /* ViewController.swift */,
 				0592CC801F900691000D3309 /* Main.storyboard */,
@@ -126,6 +142,40 @@
 				0592CCA11F900691000D3309 /* Info.plist */,
 			);
 			path = RafaelAlessandroUITests;
+			sourceTree = "<group>";
+		};
+		0592CCB81F9046BB000D3309 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0592CCB91F90472C000D3309 /* placeholder_gift.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		0592CCBC1F90581D000D3309 /* ajustes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ajustes;
+			sourceTree = "<group>";
+		};
+		0592CCBE1F905836000D3309 /* compras */ = {
+			isa = PBXGroup;
+			children = (
+				0592CCC71F93AF94000D3309 /* ProdutoRegisterViewController.swift */,
+				0592CCC91F93AFC3000D3309 /* EstadoViewController.swift */,
+				0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */,
+				0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */,
+			);
+			name = compras;
+			sourceTree = "<group>";
+		};
+		0592CCCB1F93B2CA000D3309 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0592CCCC1F93B308000D3309 /* UIViewController+CoreData.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +288,7 @@
 				0592CC8A1F900691000D3309 /* LaunchScreen.storyboard in Resources */,
 				0592CC871F900691000D3309 /* Assets.xcassets in Resources */,
 				0592CC821F900691000D3309 /* Main.storyboard in Resources */,
+				0592CCBA1F90472C000D3309 /* placeholder_gift.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0592CCCA1F93AFC3000D3309 /* EstadoViewController.swift in Sources */,
+				0592CCCF1F93BC41000D3309 /* ProdutoTableViewController.swift in Sources */,
 				0592CC7F1F900691000D3309 /* ViewController.swift in Sources */,
 				0592CC851F900691000D3309 /* RafaelAlessandro.xcdatamodeld in Sources */,
+				0592CCCD1F93B308000D3309 /* UIViewController+CoreData.swift in Sources */,
+				0592CCD11F93D183000D3309 /* ProdutoTableViewCell.swift in Sources */,
 				0592CC7D1F900691000D3309 /* AppDelegate.swift in Sources */,
+				0592CCC81F93AF94000D3309 /* ProdutoRegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fiap.RafaelAlessandro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -449,7 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fiap.RafaelAlessandro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
