@@ -2,7 +2,7 @@
 //  ProdutoTableViewCell.swift
 //  RafaelAlessandro
 //
-//  Created by Rafael Valverde on 15/10/17.
+//  Created by RafaelAlessandro on 15/10/17.
 //  Copyright © 2017 ComprasUSA. All rights reserved.
 //
 
@@ -17,17 +17,12 @@ class ProdutoTableViewCell: UITableViewCell {
     @IBOutlet weak var ivRotulo: UIImageView!
     @IBOutlet weak var swCartao: UISwitch!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-    
 }

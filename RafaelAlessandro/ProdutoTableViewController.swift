@@ -2,7 +2,7 @@
 //  ProdutoTableViewController.swift
 //  RafaelAlessandro
 //
-//  Created by Rafael Valverde on 15/10/17.
+//  Created by RafaelAlessandro on 15/10/17.
 //  Copyright © 2017 ComprasUSA. All rights reserved.
 //
 
@@ -68,7 +68,7 @@ class ProdutoTableViewController: UITableViewController {
 
         cell.lbNomeProduto.text = produto.nome
         cell.lbValor.text =  produto.valor.description
-        cell.lbEstado.text = produto.states?.description
+        cell.lbEstado.text = produto.states?.nome
         cell.swCartao.setOn(produto.cartao, animated: false)
         if let image = produto.rotulo as? UIImage {
             cell.ivRotulo.image = image

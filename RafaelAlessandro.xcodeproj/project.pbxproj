@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05903B931F998F240078C142 /* EstadoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05903B921F998F240078C142 /* EstadoTableViewCell.swift */; };
+		059276581F9AEBFA009F1447 /* ic_settings_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276551F9AEBFA009F1447 /* ic_settings_3x.png */; };
+		059276591F9AEBFA009F1447 /* ic_settings_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276561F9AEBFA009F1447 /* ic_settings_2x.png */; };
+		0592765A1F9AEBFA009F1447 /* ic_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276571F9AEBFA009F1447 /* ic_settings.png */; };
+		0592765E1F9AEC7C009F1447 /* ic_purchase_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0592765B1F9AEC7C009F1447 /* ic_purchase_2x.png */; };
+		0592765F1F9AEC7C009F1447 /* ic_purchase.png in Resources */ = {isa = PBXBuildFile; fileRef = 0592765C1F9AEC7C009F1447 /* ic_purchase.png */; };
+		059276601F9AEC7C009F1447 /* ic_purchase_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0592765D1F9AEC7C009F1447 /* ic_purchase_3x.png */; };
+		059276641F9AECA1009F1447 /* ic_attach_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276611F9AECA1009F1447 /* ic_attach_money.png */; };
+		059276651F9AECA1009F1447 /* ic_attach_money_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276621F9AECA1009F1447 /* ic_attach_money_2x.png */; };
+		059276661F9AECA1009F1447 /* ic_attach_money_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 059276631F9AECA1009F1447 /* ic_attach_money_3x.png */; };
+		059276681F9AEEC4009F1447 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 059276671F9AEEC4009F1447 /* Settings.bundle */; };
 		0592CC7D1F900691000D3309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CC7C1F900691000D3309 /* AppDelegate.swift */; };
 		0592CC7F1F900691000D3309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CC7E1F900691000D3309 /* ViewController.swift */; };
 		0592CC821F900691000D3309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0592CC801F900691000D3309 /* Main.storyboard */; };
@@ -41,6 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05903B921F998F240078C142 /* EstadoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoTableViewCell.swift; sourceTree = "<group>"; };
+		059276551F9AEBFA009F1447 /* ic_settings_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_3x.png; sourceTree = "<group>"; };
+		059276561F9AEBFA009F1447 /* ic_settings_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_2x.png; sourceTree = "<group>"; };
+		059276571F9AEBFA009F1447 /* ic_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings.png; sourceTree = "<group>"; };
+		0592765B1F9AEC7C009F1447 /* ic_purchase_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_purchase_2x.png; sourceTree = "<group>"; };
+		0592765C1F9AEC7C009F1447 /* ic_purchase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_purchase.png; sourceTree = "<group>"; };
+		0592765D1F9AEC7C009F1447 /* ic_purchase_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_purchase_3x.png; sourceTree = "<group>"; };
+		059276611F9AECA1009F1447 /* ic_attach_money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_attach_money.png; sourceTree = "<group>"; };
+		059276621F9AECA1009F1447 /* ic_attach_money_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_attach_money_2x.png; sourceTree = "<group>"; };
+		059276631F9AECA1009F1447 /* ic_attach_money_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_attach_money_3x.png; sourceTree = "<group>"; };
+		059276671F9AEEC4009F1447 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0592CC791F900691000D3309 /* RafaelAlessandro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RafaelAlessandro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0592CC7C1F900691000D3309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0592CC7E1F900691000D3309 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +169,15 @@
 		0592CCB81F9046BB000D3309 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				059276621F9AECA1009F1447 /* ic_attach_money_2x.png */,
+				059276631F9AECA1009F1447 /* ic_attach_money_3x.png */,
+				059276611F9AECA1009F1447 /* ic_attach_money.png */,
+				0592765B1F9AEC7C009F1447 /* ic_purchase_2x.png */,
+				0592765D1F9AEC7C009F1447 /* ic_purchase_3x.png */,
+				0592765C1F9AEC7C009F1447 /* ic_purchase.png */,
+				059276561F9AEBFA009F1447 /* ic_settings_2x.png */,
+				059276551F9AEBFA009F1447 /* ic_settings_3x.png */,
+				059276571F9AEBFA009F1447 /* ic_settings.png */,
 				0592CCB91F90472C000D3309 /* placeholder_gift.png */,
 			);
 			name = images;
@@ -155,6 +186,7 @@
 		0592CCBC1F90581D000D3309 /* ajustes */ = {
 			isa = PBXGroup;
 			children = (
+				059276671F9AEEC4009F1447 /* Settings.bundle */,
 			);
 			name = ajustes;
 			sourceTree = "<group>";
@@ -166,6 +198,7 @@
 				0592CCC91F93AFC3000D3309 /* EstadoViewController.swift */,
 				0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */,
 				0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */,
+				05903B921F998F240078C142 /* EstadoTableViewCell.swift */,
 			);
 			name = compras;
 			sourceTree = "<group>";
@@ -285,10 +318,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059276581F9AEBFA009F1447 /* ic_settings_3x.png in Resources */,
+				059276601F9AEC7C009F1447 /* ic_purchase_3x.png in Resources */,
 				0592CC8A1F900691000D3309 /* LaunchScreen.storyboard in Resources */,
+				059276641F9AECA1009F1447 /* ic_attach_money.png in Resources */,
+				059276591F9AEBFA009F1447 /* ic_settings_2x.png in Resources */,
 				0592CC871F900691000D3309 /* Assets.xcassets in Resources */,
+				059276681F9AEEC4009F1447 /* Settings.bundle in Resources */,
+				0592765E1F9AEC7C009F1447 /* ic_purchase_2x.png in Resources */,
+				0592765A1F9AEBFA009F1447 /* ic_settings.png in Resources */,
 				0592CC821F900691000D3309 /* Main.storyboard in Resources */,
+				059276651F9AECA1009F1447 /* ic_attach_money_2x.png in Resources */,
 				0592CCBA1F90472C000D3309 /* placeholder_gift.png in Resources */,
+				059276661F9AECA1009F1447 /* ic_attach_money_3x.png in Resources */,
+				0592765F1F9AEC7C009F1447 /* ic_purchase.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +362,7 @@
 				0592CC851F900691000D3309 /* RafaelAlessandro.xcdatamodeld in Sources */,
 				0592CCCD1F93B308000D3309 /* UIViewController+CoreData.swift in Sources */,
 				0592CCD11F93D183000D3309 /* ProdutoTableViewCell.swift in Sources */,
+				05903B931F998F240078C142 /* EstadoTableViewCell.swift in Sources */,
 				0592CC7D1F900691000D3309 /* AppDelegate.swift in Sources */,
 				0592CCC81F93AF94000D3309 /* ProdutoRegisterViewController.swift in Sources */,
 			);

@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ProdutoRegisterViewController: UIViewController {
-    
-    var produto: Product!
-    var smallImage: UIImage!
 
     @IBOutlet weak var tfNomeProduto: UITextField!
     @IBOutlet weak var ivRotulo: UIImageView!
@@ -20,11 +19,17 @@ class ProdutoRegisterViewController: UIViewController {
     @IBOutlet weak var swCartao: UISwitch!
     @IBOutlet weak var btCadastrar: UIButton!
     
+    var pickerView: UIPickerView!
+    var produto: Product!
+    var smallImage: UIImage!
+    var dataSource: [State] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         if produto != nil{
             tfNomeProduto.text = produto.nome
-//            tfEstadoProduto.text = produto.estados?.description
+            tfEstadoProduto.text = produto.states?.nome
             tfValor.text = String( produto.valor )
             swCartao.setOn(produto.cartao, animated: false)
             btCadastrar.setTitle("Atualizar", for: .normal)
@@ -32,18 +37,60 @@ class ProdutoRegisterViewController: UIViewController {
                 ivRotulo.image = image
             }
         }
-//
+        setupPickerView()
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProdutoRegisterViewController.handleTap))
         ivRotulo.addGestureRecognizer(tapGesture)
         
     }
+    
+    func close() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadState()
+    }
+    
+    func loadState() {
+        let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "nome", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            dataSource = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func setupPickerView() {
+        pickerView = UIPickerView()
+        pickerView.backgroundColor = .white
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
+        let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let btSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.items = [btCancel, btSpace, btDone]
+
+        tfEstadoProduto.inputView = pickerView
+        tfEstadoProduto.inputAccessoryView = toolbar
+    }
+    
+    func cancel() {
+        tfEstadoProduto.resignFirstResponder()
+    }
+    
+    func done() {
+        tfEstadoProduto.text = dataSource[pickerView.selectedRow(inComponent: 0)].nome
+        cancel()
+    }
 
     func handleTap() {
-        //Criando o alerta que será apresentado ao usuário
         let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster?", preferredStyle: .actionSheet)
         
-        //Verificamos se o device possui câmera. Se sim, adicionamos a devida UIAlertAction
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraAction = UIAlertAction(title: "Câmera", style: .default, handler: { (action: UIAlertAction) in
                 self.selectPicture(sourceType: .camera)
@@ -51,7 +98,6 @@ class ProdutoRegisterViewController: UIViewController {
             alert.addAction(cameraAction)
         }
         
-        //As UIAlertActions de Biblioteca de fotos e Álbum de fotos também são criadas e adicionadas
         let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { (action: UIAlertAction) in
             self.selectPicture(sourceType: .photoLibrary)
         }
@@ -68,76 +114,66 @@ class ProdutoRegisterViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
     func selectPicture(sourceType: UIImagePickerControllerSourceType) {
-        //Criando o objeto UIImagePickerController
         let imagePicker = UIImagePickerController()
-        
-        //Definimos seu sourceType através do parâmetro passado
         imagePicker.sourceType = sourceType
-        
-        //Definimos a MovieRegisterViewController como sendo a delegate do imagePicker
         imagePicker.delegate = self
-        
-        //Apresentamos a imagePicker ao usuário
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    
-    
+   
     @IBAction func addProduto(_ sender: Any) {
         if produto == nil { produto = Product(context: context) }
-        
         produto.nome = tfNomeProduto.text
         produto.rotulo = ivRotulo.image
+        if let indexState = dataSource.index(where: { $0.nome  == tfEstadoProduto.text!}) {
+            produto.states = dataSource[indexState]
+        }
         produto.valor = Double( tfValor.text! )!
         produto.cartao = swCartao.isOn
         if smallImage != nil {
             produto.rotulo = smallImage
         }
-        
         do {
             try context.save()
+            close()
         } catch {
             print(error.localizedDescription)
-            closeCadastro()
+            close()
         }
-        
-        closeCadastro()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
 
-    @IBAction func addEstado(_ sender: Any) {
-        
-    }
-    
-    func closeCadastro() {
-        dismiss(animated: true, completion: nil)
-    }
-    
+    @IBAction func addEstado(_ sender: Any) {}
 }
 
 extension ProdutoRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    //O método abaixo nos trará a imagem selecionada pelo usuário em seu tamanho original
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String: AnyObject]?) {
         
-        //Iremos usar o código abaixo para criar uma versão reduzida da imagem escolhida pelo usuário
         let smallSize = CGSize(width: 300, height: 280)
         UIGraphicsBeginImageContext(smallSize)
         image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
-        
-        //Atribuímos a versão reduzida da imagem à variável smallImage
         smallImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        ivRotulo.image = smallImage //Atribuindo a imagem à ivPoster
-        
-        //Aqui efetuamos o dismiss na UIImagePickerController, para retornar à tela anterior
+        ivRotulo.image = smallImage
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProdutoRegisterViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataSource[row].nome
+    }
+}
+
+extension ProdutoRegisterViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataSource.count
     }
 }
