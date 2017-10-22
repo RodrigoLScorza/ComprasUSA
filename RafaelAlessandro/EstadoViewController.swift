@@ -33,6 +33,11 @@ class EstadoViewController: UIViewController {
         tfCotacao.text = UserDefaults.standard.string(forKey: "dolar_preference")!
         tfIof.text = UserDefaults.standard.string(forKey: "iof_preference")!
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(Double(tfCotacao.text!), forKey: "dolar_preference")
+        UserDefaults.standard.set(Double(tfIof.text!), forKey: "iof_preference")
+    }
 
     func loadState() {
         let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
