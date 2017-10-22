@@ -26,7 +26,14 @@ class ProdutoRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        btCadastrar.isEnabled = false
+        btCadastrar.backgroundColor = .gray
+        
+        tfNomeProduto.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        tfEstadoProduto.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        tfValor.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        
         if produto != nil{
             tfNomeProduto.text = produto.nome
             tfEstadoProduto.text = produto.states?.nome
@@ -42,6 +49,26 @@ class ProdutoRegisterViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProdutoRegisterViewController.handleTap))
         ivRotulo.addGestureRecognizer(tapGesture)
         
+    }
+    
+    deinit {
+        tfNomeProduto.removeTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        tfEstadoProduto.removeTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        tfValor.removeTarget(self, action: #selector(editingChanged), for: .editingChanged)
+    }
+    
+    func editingChanged(_ textField: UITextField) {
+        guard
+            let nomeProduto = tfNomeProduto.text, !nomeProduto.isEmpty,
+            let estadoProduto = tfEstadoProduto.text, !estadoProduto.isEmpty,
+            let valor = tfValor.text, !valor.isEmpty
+            else {
+                btCadastrar.isEnabled = false
+                btCadastrar.backgroundColor = .gray
+                return
+        }
+        btCadastrar.isEnabled = true
+        btCadastrar.backgroundColor = .blue
     }
     
     func close() {
