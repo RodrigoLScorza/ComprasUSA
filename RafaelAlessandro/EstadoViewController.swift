@@ -26,6 +26,10 @@ class EstadoViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tfCotacao.keyboardType = .decimalPad
+        tfIof.keyboardType = .decimalPad
+        
         loadState()
     }
     
@@ -69,6 +73,7 @@ class EstadoViewController: UIViewController {
         
         alert.addTextField { (textImpostoField: UITextField) in
             textImpostoField.placeholder = "Imposto"
+            textImpostoField.keyboardType = .decimalPad
             if let imposto = estado?.imposto {
                 textImpostoField.text = String( imposto )
             }
