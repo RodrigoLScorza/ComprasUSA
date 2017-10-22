@@ -15,7 +15,7 @@ class ProdutoTableViewCell: UITableViewCell {
     @IBOutlet weak var lbValor: UILabel!
     @IBOutlet weak var lbPagamento: UILabel!
     @IBOutlet weak var ivRotulo: UIImageView!
-    @IBOutlet weak var swCartao: UISwitch!
+    @IBOutlet weak var lbCartao: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
