@@ -33,6 +33,7 @@ class ProdutoRegisterViewController: UIViewController {
         tfNomeProduto.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         tfEstadoProduto.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         tfValor.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        tfValor.keyboardType = .decimalPad
         
         if produto != nil{
             tfNomeProduto.text = produto.nome
@@ -43,6 +44,9 @@ class ProdutoRegisterViewController: UIViewController {
             if let image = produto.rotulo as? UIImage {
                 ivRotulo.image = image
             }
+            
+            btCadastrar.isEnabled = true
+            btCadastrar.backgroundColor = .blue
         }
         setupPickerView()
 
