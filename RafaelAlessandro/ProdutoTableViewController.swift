@@ -69,7 +69,7 @@ class ProdutoTableViewController: UITableViewController {
         cell.lbNomeProduto.text = produto.nome
         cell.lbValor.text =  produto.valor.description
         cell.lbEstado.text = produto.states?.nome
-        cell.swCartao.setOn(produto.cartao, animated: false)
+        cell.lbCartao.text = produto.cartao ? "Sim" : "Não"
         if let image = produto.rotulo as? UIImage {
             cell.ivRotulo.image = image
         } else {

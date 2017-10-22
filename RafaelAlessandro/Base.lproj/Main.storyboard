@@ -57,19 +57,22 @@
                                             <rect key="frame" x="31" y="15" width="97" height="94"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU7-oS-Pdt">
-                                            <rect key="frame" x="219" y="99" width="49" height="31"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-k2-g4w">
+                                            <rect key="frame" x="218" y="104" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </switch>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ivRotulo" destination="hje-5r-qtn" id="xOi-xN-xIJ"/>
+                                    <outlet property="lbCartao" destination="Rru-k2-g4w" id="FLT-ta-z7U"/>
                                     <outlet property="lbEstado" destination="trl-ec-t9R" id="Iaz-Xe-uux"/>
                                     <outlet property="lbNomeProduto" destination="1ee-7V-rEI" id="mYc-HY-sF8"/>
                                     <outlet property="lbPagamento" destination="CbY-3z-3h3" id="Vei-IX-Wpf"/>
                                     <outlet property="lbValor" destination="hxR-U5-Khj" id="001-Sg-xPQ"/>
-                                    <outlet property="swCartao" destination="oU7-oS-Pdt" id="h6R-c3-mew"/>
                                     <segue destination="2vc-IH-vIm" kind="show" id="E6N-YK-8ZK"/>
                                 </connections>
                             </tableViewCell>
@@ -311,7 +314,7 @@
         <!--Total da compra-->
         <scene sceneID="NjA-ue-dVA">
             <objects>
-                <viewController id="r5d-Lo-fXA" sceneMemberID="viewController">
+                <viewController id="r5d-Lo-fXA" customClass="TotalViewController" customModule="RafaelAlessandro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q6Z-pK-w15">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,6 +353,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da compra" image="ic_attach_money.png" id="d84-Vt-hhk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lbTotalDolar" destination="7VN-kQ-ips" id="0TH-Ig-xgp"/>
+                        <outlet property="lbTotalReal" destination="SxG-5x-rM7" id="YFG-5I-h1d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jc-1P-D59" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
