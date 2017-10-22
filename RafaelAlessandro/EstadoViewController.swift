@@ -95,7 +95,7 @@ class EstadoViewController: UIViewController {
 extension EstadoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let state = dataSource[indexPath.row]
+        // let state = dataSource[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath)!
         if cell.accessoryType == .none {
             //cell.accessoryType = .checkmark
