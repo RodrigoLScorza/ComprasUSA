@@ -26,12 +26,21 @@ class EstadoViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tfCotacao.keyboardType = .decimalPad
+        tfIof.keyboardType = .decimalPad
+        
         loadState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tfCotacao.text = UserDefaults.standard.string(forKey: "dolar_preference")!
         tfIof.text = UserDefaults.standard.string(forKey: "iof_preference")!
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(Double(tfCotacao.text!), forKey: "dolar_preference")
+        UserDefaults.standard.set(Double(tfIof.text!), forKey: "iof_preference")
     }
 
     func loadState() {
@@ -64,6 +73,7 @@ class EstadoViewController: UIViewController {
         
         alert.addTextField { (textImpostoField: UITextField) in
             textImpostoField.placeholder = "Imposto"
+            textImpostoField.keyboardType = .decimalPad
             if let imposto = estado?.imposto {
                 textImpostoField.text = String( imposto )
             }
@@ -95,7 +105,7 @@ class EstadoViewController: UIViewController {
 extension EstadoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let state = dataSource[indexPath.row]
+        // let state = dataSource[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath)!
         if cell.accessoryType == .none {
             //cell.accessoryType = .checkmark
@@ -105,6 +115,9 @@ extension EstadoViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Excluir") { (action: UITableViewRowAction, indexPath: IndexPath) in

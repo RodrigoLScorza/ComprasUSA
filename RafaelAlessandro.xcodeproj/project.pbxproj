@@ -32,6 +32,7 @@
 		0592CCCD1F93B308000D3309 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCCC1F93B308000D3309 /* UIViewController+CoreData.swift */; };
 		0592CCCF1F93BC41000D3309 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */; };
 		0592CCD11F93D183000D3309 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */; };
+		AC660C111F9CE2A300A96BA9 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC660C101F9CE2A300A96BA9 /* TotalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		0592CCCC1F93B308000D3309 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
 		0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
+		AC660C101F9CE2A300A96BA9 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				0592CCCE1F93BC41000D3309 /* ProdutoTableViewController.swift */,
 				0592CCD01F93D183000D3309 /* ProdutoTableViewCell.swift */,
 				05903B921F998F240078C142 /* EstadoTableViewCell.swift */,
+				AC660C101F9CE2A300A96BA9 /* TotalViewController.swift */,
 			);
 			name = compras;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				0592CCCA1F93AFC3000D3309 /* EstadoViewController.swift in Sources */,
 				0592CCCF1F93BC41000D3309 /* ProdutoTableViewController.swift in Sources */,
 				0592CC7F1F900691000D3309 /* ViewController.swift in Sources */,
+				AC660C111F9CE2A300A96BA9 /* TotalViewController.swift in Sources */,
 				0592CC851F900691000D3309 /* RafaelAlessandro.xcdatamodeld in Sources */,
 				0592CCCD1F93B308000D3309 /* UIViewController+CoreData.swift in Sources */,
 				0592CCD11F93D183000D3309 /* ProdutoTableViewCell.swift in Sources */,
